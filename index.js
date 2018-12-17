@@ -1,32 +1,32 @@
-(function() {
+(function(): void {
   console.log(
     "02",
     [
-      ...(function*(b = 1, e = 50) {
-        while (b <= e) {
-          yield b++;
-        }
+      ...(function*(b: number = 1, e: number = 50) {
+        while (b <= e) yield b++;
       })()
     ]
-      .filter(n => n % 3 === 0)
-      .filter(n =>
-        ((
-          x = n
-            .toString()
-            .split("")
-            .map(Number)
-            .reduce((a, b) => a + b)
-        ) => x > 4 && x < 8)()
+      .filter((n: number): boolean => n % 3 === 0)
+      .filter(
+        (n: number): boolean =>
+          ((
+            x: number = n
+              .toString()
+              .split("")
+              .map(Number)
+              .reduce((a: number, b: number): number => a + b)
+          ) => x > 4 && x < 8)()
       )
-      .filter(n => n % 2 !== 0)
-      .filter(n =>
-        ((
-          x = n
-            .toString()
-            .split("")
-            .map(Number)
-            .reduce((a, b) => a * b)
-        ) => x > 4 && x < 8)()
+      .filter((n: number): boolean => n % 2 !== 0)
+      .filter(
+        (n: number): boolean =>
+          ((
+            x: number = n
+              .toString()
+              .split("")
+              .map(Number)
+              .reduce((a: number, b: number): number => a * b)
+          ): boolean => x > 4 && x < 8)()
       )
       .reduce(String)
   );
