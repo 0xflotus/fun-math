@@ -2,7 +2,7 @@
   console.log(
     "02",
     [
-      ...(function*(b: number = 1, e: number = 50) {
+      ...(function*(b: number = 1, e: number = 50): Iterable<number> {
         while (b <= e) yield b++;
       })()
     ]
